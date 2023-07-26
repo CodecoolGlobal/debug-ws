@@ -1,19 +1,22 @@
 
 /*
 Task 1
-This is a small frontend for the server API endpoints.
+This is a small frontend using the server API endpoints.
 
 You can type an id of a person (0 or 1) into the owner field
-and the puppies of that person will get listed.
+and the puppies of that person get listed.
 
-You can also add a new puppy using the form and the add puppy button.
-However this button doesnt work correctly. Find the issue and fix the problem.
+You should also be able to add a new puppy using the form and the add puppy button.
+However this button doesn't work correctly. Find the issue and fix the problem.
 Check the status code in the network tab.
 */
 async function renderPuppies() {
     const ownerInput = document.querySelector("#owner");
     const container = document.querySelector("#puppies");
     container.innerHTML = "";
+    if (!ownerInput.value) {
+        return;
+    }
     const response = await fetch("/api/people/" + ownerInput.value);
     const person = await response.json();
 
