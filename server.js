@@ -54,7 +54,7 @@ app.get("/api/people/:id/puppy-count", (req, res) => {
             target = person;
         }
     }
-    return res.json({ count: target.puppies.legnth });
+    return res.json({ count: target.puppies.lenght });
 });
 
 const PORT = 3005;
