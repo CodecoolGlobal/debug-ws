@@ -47,6 +47,16 @@ app.post("/api/people/:id/puppies", (req, res) => {
     return res.json(target);
 });
 
+app.get("/api/people/:id/puppy-count", (req, res) => {
+    let target = null;
+    for (const person of people) {
+        if (person.id == req.params.id) {
+            target = person;
+        }
+    }
+    return res.json({ count: target.puppies.legnth });
+});
+
 const PORT = 3005;
 app.listen(PORT, () => {
     console.log("listening on", PORT);
