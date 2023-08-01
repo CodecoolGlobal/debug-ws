@@ -10,6 +10,11 @@ slighly more complex issue that you'll learn how to debug.
 
 ## Usage
 
+As a first step, install all dependencies by running the follwing in the project folder
+```
+npm i
+```
+
 Before each task, it's advised to (re)start the server.
 
 You can run the server with
