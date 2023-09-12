@@ -11,7 +11,7 @@ Check the request in the network tab (Headers, response), does it look correct?
     - if the response is not corret the issue may be on the server
 */
 
-const renderCount = async () => { 
+const renderCount = async () => {
     const ownerInput = document.querySelector("#owner");
     const puppyCount = document.querySelector("#puppy-count");
     const id = Number(ownerInput.value);
