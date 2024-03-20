@@ -1,4 +1,3 @@
-
 // http://localhost:3005/3.html
 
 /*
@@ -24,7 +23,7 @@ const renderCount = async () => {
     const response = await fetch(`/api/person/${id}/puppy-count`);
     const countData = await response.json();
     puppyCount.textContent = countData.count;
-}
+};
 
 function main() {
     const ownerInput = document.querySelector("#owner");

@@ -1,4 +1,3 @@
-
 /*
 Visit http://localhost:3005/2.html
 */
@@ -15,7 +14,8 @@ Check the request in the network tab (Headers, response), does it look correct?
     - if the response is correct than the issue must be on the frontend
     - if the response is not correct the issue may be on the server
 */
-let fetchPeople = () => { fetch("/api/people").then(res => res.json()); }
+// prettier-ignore
+let fetchPeople = () => { fetch("/api/people").then((res) => res.json()) };
 // fetchPeople().then(people => { console.log(people[0]) });
 
 /*
@@ -23,17 +23,18 @@ Task 2
 Think about what could cause the error. Fix the error.
 */
 
-
 /*
 Task 3
 We want to display all people `div`s. Why don't they show up?
 Fix the issue, so that they show.
 */
-fetchPeople().then(people => { 
-    const divs = people.map(person => {`
+fetchPeople().then((people) => {
+    const divs = people.map((person) => {
+        `
         <div>
             ${person.name}, ${person.email}
         </div>
-    `});
+    `;
+    });
     document.body.insertAdjacentHTML("beforeend", divs.join(""));
 });

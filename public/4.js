@@ -1,4 +1,3 @@
-
 // http://localhost:3005/4.html
 
 /*
@@ -23,9 +22,10 @@ async function renderPuppies() {
     const person = await response.json();
 
     for (const puppy of person.puppies) {
-        container.insertAdjacentHTML("beforeend", `
-            <div>${puppy.name}, ${puppy.weight}</div>
-        `)
+        container.insertAdjacentHTML(
+            "beforeend",
+            `<div>${puppy.name}, ${puppy.weight}</div>`
+        );
     }
 }
 
@@ -40,14 +40,17 @@ function main() {
         await fetch(`/api/people/${ownerInput.value}/puppies`, {
             method: "POST",
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
             },
-            body: JSON.stringify({ name: nameInput.value, weight: weightInput.value })
+            body: JSON.stringify({
+                name: nameInput.value,
+                weight: weightInput.value,
+            }),
         });
         renderPuppies();
     });
     ownerInput.addEventListener("input", () => {
         renderPuppies();
-    })
+    });
 }
 main();
