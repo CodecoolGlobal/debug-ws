@@ -1,14 +1,16 @@
 
+// http://localhost:3005/3.html
+
 /*
 
-When the user types in a an owner id (0 or 1) into the input field,
+When the user types an owner id (0 or 1) into the input field,
 then number of their puppies should show up.
 
 Check the request in the network tab (Headers, response), does it look correct?
 - Check the URL, method, and status.
 - Check the response
     - if the response is correct than the issue must be on the frontend
-    - if the response is not corret the issue may be on the server
+    - if the response is not correct the issue may be on the server
 */
 
 const renderCount = async () => {
@@ -19,7 +21,7 @@ const renderCount = async () => {
         puppyCount.textContent = "-Invalid ID-";
         return;
     }
-    const response = await fetch(`/api/peolpe/${id}/puppy-count`);
+    const response = await fetch(`/api/person/${id}/puppy-count`);
     const countData = await response.json();
     puppyCount.textContent = countData.count;
 }

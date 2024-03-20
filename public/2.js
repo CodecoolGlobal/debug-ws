@@ -13,7 +13,7 @@ Check the request in the network tab (Headers, response), does it look correct?
 - Check the URL, method, and status.
 - Check the response
     - if the response is correct than the issue must be on the frontend
-    - if the response is not corret the issue may be on the server
+    - if the response is not correct the issue may be on the server
 */
 let fetchPeople = () => { fetch("/api/people").then(res => res.json()); }
 // fetchPeople().then(people => { console.log(people[0]) });
